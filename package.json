@@ -1,0 +1,25 @@
+{
+  "name": "fy-cli-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "serve": "node dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^14.14.12",
+    "prettier": "^2.2.1",
+    "typescript": "^4.1.2"
+  },
+  "dependencies": {
+    "@types/uuid": "^8.3.0",
+    "axios": "^0.21.0",
+    "crypto-js": "^4.0.0",
+    "uuid": "^8.3.2"
+  }
+}
