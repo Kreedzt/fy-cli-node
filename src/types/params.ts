@@ -3,7 +3,7 @@ export interface Params {
   from: string;
   to: string;
   appKey: string;
-  salt: string;
+  salt: string | number;
   sign: string;
   signType: string;
   curtime: string | number;

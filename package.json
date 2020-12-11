@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "bin": "release/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "serve": "node dist/index.js"
+    "serve": "node dist/index.js",
+    "format": "prettier -w src/**/*.ts",
+    "release": "tsc -p tsconfig-release.json"
   },
   "keywords": [],
   "author": "",
