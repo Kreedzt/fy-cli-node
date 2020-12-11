@@ -1,5 +1,6 @@
-import axios, { AxiosRequestConfig } from 'axios';
+import axios from 'axios';
 import qs from 'querystring';
+import { TransformRes } from 'res';
 
 const httpClient = axios.create({
   baseURL: 'https://openapi.youdao.com/api',
@@ -15,6 +16,10 @@ httpClient.interceptors.request.use((config) => {
 });
 
 httpClient.interceptors.response.use(res => {
+  const resData = res.data as TransformRes;
+  if (resData.errorCode !== "0") {
+    return new Promise((_, rej) => rej(resData));
+  }
   return res.data;
 });
 

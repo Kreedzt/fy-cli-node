@@ -1,19 +1,21 @@
 {
   "name": "fy-cli-node",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.1.0",
+  "description": "A command-line translation tool",
   "main": "index.js",
-  "bin": "release/index.js",
+  "bin": {
+    "nfy": "release/index.js"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node dist/index.js This is a bug, not a feature.",
     "build": "tsc",
     "serve": "node dist/index.js",
     "format": "prettier -w src/**/*.ts",
     "release": "tsc -p tsconfig-release.json"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["cli", "translation"],
+  "author": "Kreedzt",
+  "license": "MIT",
   "devDependencies": {
     "@types/node": "^14.14.12",
     "prettier": "^2.2.1",

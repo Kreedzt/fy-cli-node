@@ -15,8 +15,8 @@ const getUserKey = (): {
     const { appKey, appSecure } = JSON.parse(data) as Config;
     return {
       appKey,
-      appSecure
-    }
+      appSecure,
+    };
   } catch (e) {
     console.error('没有应用程序ID与密钥配置, 请先使用--config进行配置');
     console.log('格式: nfy --config <应用ID> <应用密钥>');
@@ -24,13 +24,17 @@ const getUserKey = (): {
   }
 };
 
-const setUserKey = (appSecure: string, appKey: string) => {
+const setUserKey = (appKey: string, appSecure: string) => {
   const data = {
     appKey,
     appSecure,
   };
   try {
-    fs.writeFileSync(CONFIG_FILE_PATH, JSON.stringify(data, null, 2), ENCODEING);
+    fs.writeFileSync(
+      CONFIG_FILE_PATH,
+      JSON.stringify(data, null, 2),
+      ENCODEING
+    );
     console.log('写入配置成功, 文件位置:', CONFIG_FILE_PATH);
   } catch (e) {
     console.error('写入配置文件失败', e);
@@ -38,7 +42,4 @@ const setUserKey = (appSecure: string, appKey: string) => {
   }
 };
 
-export {
-  getUserKey,
-  setUserKey
-}
+export { getUserKey, setUserKey };

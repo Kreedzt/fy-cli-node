@@ -1,6 +1,7 @@
 import httpClient from './http';
-import { generateParam, getUserInput } from './utils/parse';
+import { displayRes, generateParam, getUserInput } from './utils/parse';
 import { getUserKey } from './utils/key';
+import { TransformRes } from 'res';
 
 
 const userInput = getUserInput();
@@ -12,7 +13,7 @@ const params = generateParam(userInput, appKey, appSecure);
 httpClient
   .post('', params)
   .then((res) => {
-    console.log('res', res);
+    displayRes(res as unknown as TransformRes);
     process.exit(0);
   })
   .catch((err) => {
